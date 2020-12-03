@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.4.1)  # for example
 
-add_library( native
+add_library(
+             # Sets the library .so name.
+             native
 
              # Sets the library as a shared library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             ../../ios/Classes/native_func.cpp )
+             ../../ios/Classes/native_arithmetic.cpp
+             ../../ios/Classes/native_reverse.cpp )
