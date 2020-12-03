@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dart_jc666/bridge.dart';
+import 'package:flutter_dart_jc666/native_add.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,6 +32,16 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String response = "";
   String responseStream = "";
+  int oneNumber = 1000;
+  int twoNumber = 1;
+  int _counter = 0;
+
+  //One run One add 1
+  void _incrementCounter() {
+    setState(() {
+      _counter = nativeAdd(_counter, 1);
+    });
+  }
 
   StreamSubscription<String> internetConnectivityStream;
 
@@ -100,8 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
               textAlign: TextAlign.center,
             ),
             Text(
-              'Native index++ : ',
-              textAlign: TextAlign.center,
+              // 'Native index++ : ',
+              // textAlign: TextAlign.center,
+                "native double value = ${doubleAdd(oneNumber.toDouble(), twoNumber.toDouble())}"
             ),
             Text(
               // responseStream ? "YES" : "No",
