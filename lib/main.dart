@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dart_jc666/bridge.dart';
-import 'package:flutter_dart_jc666/native.dart';
-import 'Utf8.dart';
+import 'package:flutter_dart_jc666/platform/bridge.dart';
+import 'package:flutter_dart_jc666/native/native.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'JC666 Flutter Demo Native Example'),
+      home: MyHomePage(title: 'JC666 Flutter Demo Example'),
     );
   }
 }
