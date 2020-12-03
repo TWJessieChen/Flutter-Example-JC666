@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dart_jc666/bridge.dart';
-import 'package:flutter_dart_jc666/native_add.dart';
+import 'package:flutter_dart_jc666/native.dart';
+import 'Utf8.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,11 +36,12 @@ class _MyHomePageState extends State<MyHomePage> {
   int oneNumber = 1000;
   int twoNumber = 1;
   int _counter = 0;
+  String str = "JC666";
 
   //One run One add 1
   void _incrementCounter() {
     setState(() {
-      _counter = nativeAdd(_counter, 1);
+      _counter = Native.intAdd(_counter, 1);
     });
   }
 
@@ -113,7 +115,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               // 'Native index++ : ',
               // textAlign: TextAlign.center,
-                "native double value = ${doubleAdd(oneNumber.toDouble(), twoNumber.toDouble())}"
+              //   "native double value = ${doubleAdd(oneNumber.toDouble(), twoNumber.toDouble())}"
+                "native reverse str = ${Native.reverseFunc(str, str.length)}"
+
             ),
             Text(
               // responseStream ? "YES" : "No",
